@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="parameter_testing" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7584223e-79f9-4243-ae3d-0a5675936b42">
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver-pro55GA/"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/parameter_testing_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/parameter_testing"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FoodMart"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LoggedInUserFullName" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="LoggedInUsername" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserEmailAddress" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserEnabled" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="LoggedInUserExternallyDefined" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="LoggedInUserTenantId" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserRoles" class="java.util.Collection" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttributes" class="java.util.Map" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttributeNames" class="java.util.Collection" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttributeValues" class="java.util.Collection" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_SBU" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 1 as dummy_field]]>
+	</queryString>
+	<field name="dummy_field" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="603" splitType="Stretch">
+			<textField>
+				<reportElement uuid="ea2e7eff-829f-4203-aedf-f211db60c582" x="0" y="75" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserFullName " + $P{LoggedInUserFullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40b31d0a-4d14-4384-993e-21fe3bf01f1f" x="0" y="105" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserFullName " + $P{LoggedInUserFullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="430b80ea-e7b2-4f9e-8b40-a4c8f322d4ad" x="0" y="135" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserEmailAddress " + $P{LoggedInUserEmailAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33af073c-d954-437a-9a8c-20d51c35a576" x="0" y="165" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserEnabled " + $P{LoggedInUserEnabled}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c093fc70-dc54-4ca9-9920-a59851c9c9a4" x="0" y="195" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserExternallyDefined " + $P{LoggedInUserExternallyDefined}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9cbf8b1e-e64f-4fd3-b8ed-91895f0e129e" x="0" y="225" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserTenantId " + $P{LoggedInUserTenantId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="106f347f-6129-4f65-84a8-db0e8028592d" x="0" y="255" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserRoles " + $P{LoggedInUserRoles}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06d3da71-444d-4357-8082-2550b0fec370" x="0" y="285" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserAttributes " + $P{LoggedInUserAttributes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79cfe392-7060-4efd-8178-f4dc55193aac" x="0" y="315" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserAttributeNames " + $P{LoggedInUserAttributeNames}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2e302e6-4b39-4bbf-ad0e-f09543da2d31" x="0" y="345" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserAttributeValues " + $P{LoggedInUserAttributeValues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fe1d80c3-3914-45dd-a452-47cb9e3d5665" x="0" y="375" width="280" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["LoggedInUserAttribute_ " + $P{LoggedInUserAttribute_SBU}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="92bcc1df-03c3-453f-bc29-2979a0f9fe50" x="65" y="533" width="366" height="20"/>
+				<textElement/>
+				<text><![CDATA[http://community.jaspersoft.com/wiki/built-parameters-logged-user]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de4c5cbf-2a1f-4f7e-8834-d1eeb84d2bc9" x="144" y="0" width="287" height="43"/>
+				<textElement/>
+				<text><![CDATA[Built-in Parameters for logged in user]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>
