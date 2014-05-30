@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hyperlink_test" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="70361a14-54f5-4570-9d16-a6528fd2594e">
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/MyExamples/hyperlink_test_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/MyExamples/hyperlink_test"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT account.account_type,
+	account.account_id
+FROM account]]>
+	</queryString>
+	<field name="account_type" class="java.lang.String"/>
+	<field name="account_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="0" width="100" height="20" uuid="c255a353-4ffa-4c17-89b8-bed5c467a361"/>
+				<text><![CDATA[account_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="100" height="20" uuid="6db42a48-2abc-47ab-bf71-b0a2d5313239"/>
+				<text><![CDATA[account_id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField hyperlinkType="Launcher">
+				<reportElement x="69" y="22" width="100" height="20" uuid="8e839ece-bd77-448f-b776-d2fb77f347ec"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_type}]]></textFieldExpression>
+				<hyperlinkParameter name="par">
+					<hyperlinkParameterExpression><![CDATA[$F{account_type}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField>
+				<reportElement x="266" y="26" width="100" height="20" uuid="b2431376-6eb6-4c6a-8782-acce6947cc70"/>
+				<textFieldExpression><![CDATA[$F{account_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

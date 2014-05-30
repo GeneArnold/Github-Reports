@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="product_details" pageWidth="300" pageHeight="400" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3b5bfabf-60ff-4ab2-a519-005c99e59cd5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FoodMart"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver-pro56_Beta/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/VisualizeJS/ProductDetails_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/VisualizeJS/ProductDetails"/>
+	<parameter name="parProductId" class="java.lang.Integer" isForPrompting="false">
+		<parameterDescription><![CDATA[Product Id]]></parameterDescription>
+		<defaultValueExpression><![CDATA[50]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT product.product_id,
+	product.product_name,
+	product.brand_name,
+	product.sku,
+	product.srp,
+	product.gross_weight,
+	product.net_weight,
+	product.recyclable_package,
+	product.low_fat,
+	product.shelf_depth,
+	product.shelf_height,
+	product.shelf_width,
+	product.cases_per_pallet,
+	product.units_per_case
+FROM product
+WHERE product.product_id = $P{parProductId}]]>
+	</queryString>
+	<field name="product_id" class="java.lang.Integer"/>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="brand_name" class="java.lang.String"/>
+	<field name="sku" class="java.lang.Long"/>
+	<field name="srp" class="java.math.BigDecimal"/>
+	<field name="gross_weight" class="java.lang.Float"/>
+	<field name="net_weight" class="java.lang.Float"/>
+	<field name="recyclable_package" class="java.lang.Boolean"/>
+	<field name="low_fat" class="java.lang.Boolean"/>
+	<field name="shelf_depth" class="java.lang.Float"/>
+	<field name="shelf_height" class="java.lang.Float"/>
+	<field name="shelf_width" class="java.lang.Float"/>
+	<field name="cases_per_pallet" class="java.lang.Integer"/>
+	<field name="units_per_case" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="400" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="300" height="400" forecolor="#FFFFFF" uuid="6b092f69-442e-4d00-937f-16520268fcc9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="40" width="300" height="359" uuid="d9b97d79-55b4-40aa-aaa1-0cccfa070be7">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="300" height="40" backcolor="#CCCCCC" uuid="1687a2e2-a40e-43f4-99d7-4dc50a7a6405"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="72" width="290" height="25" uuid="554e4f32-6b61-4b9a-a48a-053b3835b181">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Brand - " + $F{brand_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="97" width="290" height="25" uuid="e76e439f-617d-4e7c-bf55-cd22a42f5640">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SKU - " + $F{sku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="122" width="290" height="25" uuid="2f6aeeb9-6b2b-43c4-887c-795a53577025">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SRP - " + $F{srp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="147" width="290" height="25" uuid="ea13714d-b9b5-4923-9285-ccf25f82c09a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gross Weight - " + $F{gross_weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="172" width="290" height="25" uuid="54f0ccc7-c173-4526-88ae-4c8f19c4ba1b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Net Weight - " + $F{net_weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="197" width="290" height="25" uuid="fbb49166-6874-4bca-9fcb-306022117b32">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Recyclable Package - " + $F{recyclable_package}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="222" width="290" height="25" uuid="fd42cd41-910e-400a-bb52-22bac54d653e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Low Fat - " + $F{low_fat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="247" width="290" height="25" uuid="0bc32a6c-c3fe-41e7-855d-c6472c22aa58">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Shelf Depth - " + $F{shelf_depth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="272" width="290" height="25" uuid="605d0df2-647c-4a08-b58b-29921c886f15">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Shelf Height - " + $F{shelf_height}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="297" width="290" height="25" uuid="8c0f47ac-2f7d-41fe-99e6-beaeb592c996">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Shelf Width - " + $F{shelf_width}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="322" width="290" height="25" uuid="6220350b-e809-4894-83b5-5434d2956504">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cases Per Pallet - " + $F{cases_per_pallet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="347" width="290" height="25" uuid="31b911bd-5809-4c7b-a41d-6b8f569ce57d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Units Per Case - " + $F{units_per_case}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>

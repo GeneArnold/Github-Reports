@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conditions_example" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c725daea-9df7-4b21-b832-76c4e13b583d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FoodMart"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="BG Red">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{one} == 1]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F24946"/>
+		</conditionalStyle>
+	</style>
+	<style name="BG Green">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{two} == 2]]></conditionExpression>
+			<style mode="Opaque" backcolor="#66CC81"/>
+		</conditionalStyle>
+	</style>
+	<style name="BG Orange">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{three} == 3]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F27D46"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT 1 as one, 2 as two, 3 as three]]>
+	</queryString>
+	<field name="one" class="java.lang.Integer"/>
+	<field name="two" class="java.lang.Integer"/>
+	<field name="three" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="530" height="60" uuid="5799e2ec-e396-4e8d-b1dc-2a2422ff58d8"/>
+				<box>
+					<topPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Conditional Formating Example"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="c0e980ba-ce16-4ac9-bbfe-fadc47bfb4cf"/>
+				<text><![CDATA[one]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="20" uuid="85641637-c7f4-45f8-bffa-68b57a68ef2e"/>
+				<text><![CDATA[two]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="20" uuid="185c85ac-84a5-4e89-83c0-17d79f0a05cf"/>
+				<text><![CDATA[three]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement style="BG Red" x="0" y="0" width="100" height="20" uuid="6b9ffbd8-258c-4a2c-896b-35be5c189cfe"/>
+				<textFieldExpression><![CDATA[$F{one}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement style="BG Green" x="110" y="0" width="100" height="20" uuid="0a3fe7d7-d32e-4923-916b-7fc25b4d0a61"/>
+				<textFieldExpression><![CDATA[$F{two}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="BG Orange" x="220" y="0" width="100" height="20" uuid="5b2e9178-ed27-4503-b515-4c093a95db28"/>
+				<textFieldExpression><![CDATA[$F{three}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement x="330" y="2" width="100" height="17" uuid="eedef6f8-6c07-4399-bfd6-ab26b54a5193"/>
+				<textFieldExpression><![CDATA["Hyper Link"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA[( $F{two}.equals(2) ? ("javascript:alert('http://google.com')") : ("javascript:alert('http://bing.com')") )]]></hyperlinkReferenceExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="200" height="45" uuid="c2fad4a3-3d41-4b97-8db6-c25c94c00015">
+					<printWhenExpression><![CDATA[$F{three} > 2]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[You can see me!]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>
